@@ -12,6 +12,20 @@ navLinks.querySelectorAll('a').forEach(link => {
     });
 });
 
+// Films Accordion
+document.querySelectorAll('.film-acc-header').forEach(btn => {
+    btn.addEventListener('click', () => {
+        const item = btn.parentElement;
+        const isActive = item.classList.contains('active');
+
+        document.querySelectorAll('.film-acc-item').forEach(i => i.classList.remove('active'));
+
+        if (!isActive) {
+            item.classList.add('active');
+        }
+    });
+});
+
 // FAQ Accordion
 document.querySelectorAll('.faq-question').forEach(btn => {
     btn.addEventListener('click', () => {
