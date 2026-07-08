@@ -12,6 +12,20 @@ navLinks.querySelectorAll('a').forEach(link => {
     });
 });
 
+// Timeline Accordion
+document.querySelectorAll('.tl-header').forEach(btn => {
+    btn.addEventListener('click', () => {
+        const item = btn.closest('.tl-item');
+        const isActive = item.classList.contains('active');
+
+        document.querySelectorAll('.tl-item').forEach(i => i.classList.remove('active'));
+
+        if (!isActive) {
+            item.classList.add('active');
+        }
+    });
+});
+
 // Films Accordion
 document.querySelectorAll('.film-acc-header').forEach(btn => {
     btn.addEventListener('click', () => {
